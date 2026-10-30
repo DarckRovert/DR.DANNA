@@ -3,23 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dra. Tupac | Médico Cirujano</title>
-  <meta name="description" content="Carta de presentación profesional de la Dra. Danna Marjorie Tupac Rojas, Médico Cirujano en Lima, Perú." />
+  <title>Dra. Danna Marjorie Tupac Rojas | Médico Cirujano · CMP 111905</title>
+  <meta name="description" content="Portafolio profesional de la Dra. Danna Marjorie Tupac Rojas, Médico Cirujano (UPC, CMP 111905). Postgrado en Auditoría Médica (EPG UPC), certificaciones ATLS, ACLS y BLS. Lima, Perú." />
+  <meta name="keywords" content="Dra. Danna Tupac, Médico Cirujano, Cirugía Oncológica, CMP 111905, UPC Medicina, Auditoría Médica, ATLS, ACLS, BLS, HEVES, Casimiro Ulloa, Lima Perú" />
+  <link rel="canonical" href="https://dr-danna.vercel.app/" />
+
+  <!-- Open Graph / Redes Sociales -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Dra. Danna Marjorie Tupac Rojas | Médico Cirujano" />
+  <meta property="og:description" content="Médica Cirujana egresada de la UPC. Postgrado en Auditoría Médica (EPG UPC) y soporte vital avanzado ATLS, ACLS y BLS." />
+  <meta property="og:image" content="https://dr-danna.vercel.app/assets/dra-danna-hero.jpg" />
+  <meta property="og:url" content="https://dr-danna.vercel.app/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dra. Danna Marjorie Tupac Rojas | Médico Cirujano" />
+  <meta name="twitter:description" content="Médica Cirujana con sólida formación clínica y quirúrgica. CMP 111905 habilitada." />
+  <meta name="twitter:image" content="https://dr-danna.vercel.app/assets/dra-danna-hero.jpg" />
+
+  <!-- Favicon / Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Schema.org Datos Estructurados Médicos -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dra. Danna Marjorie Tupac Rojas",
+    "honorificPrefix": "Dra.",
+    "jobTitle": "Médico Cirujano",
+    "medicalSpecialty": [
+      "General Surgery",
+      "Surgical Oncology",
+      "Emergency Medicine",
+      "Internal Medicine"
+    ],
+    "url": "https://dr-danna.vercel.app",
+    "image": "https://dr-danna.vercel.app/assets/dra-danna-hero.jpg",
+    "telephone": "+51939753987",
+    "email": "tupacdanna@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jirón Monte Algarrobo 110, Urb. Monterrico Sur",
+      "addressLocality": "Santiago de Surco",
+      "addressRegion": "Lima",
+      "addressCountry": "PE"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Universidad Peruana de Ciencias Aplicadas (UPC)"
+    },
+    "identifier": {
+      "@type": "PropertyValue",
+      "name": "Colegio Médico del Perú (CMP)",
+      "value": "111905"
+    }
+  }
+  </script>
 </head>
 <body>
 
   <!-- ══════════════ NAVBAR ══════════════ -->
   <nav id="navbar">
     <div class="nav-container">
-      <a href="#inicio" class="nav-logo">Dra. <span>Tupac</span></a>
+      <a href="#inicio" class="nav-logo">Dra. <span>Danna Tupac</span></a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#sobre-mi">Sobre mí</a></li>
-        <li><a href="#experiencia">Áreas de Experiencia</a></li>
+        <li><a href="#experiencia">Competencias</a></li>
         <li><a href="#formacion">Formación</a></li>
+        <li><a href="#referencias">Referencias</a></li>
         <li><a href="#contacto" class="nav-cta">Contactar</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Menú">
@@ -33,41 +88,50 @@
     <canvas id="particleCanvas"></canvas>
     <div class="hero-content">
       <div class="hero-text">
-        <p class="hero-eyebrow">Bienvenido/a</p>
-        <h1 class="hero-title">Dra. <em>Tupac</em></h1>
-        <p class="hero-specialty">Médico Cirujano · CMP: 111905</p>
-        <p class="hero-description">
-          Médica con sólida formación clínica y experiencia en atención hospitalaria y comunitaria. Destaco por mi responsabilidad, empatía y capacidad de trabajo bajo presión, con un marcado interés en el área quirúrgica.
-        </p>
-        <div class="hero-actions">
-          <a href="#contacto" class="btn-primary">Contactar</a>
-          <a href="#sobre-mi" class="btn-ghost">Conoce más →</a>
+        <div class="hero-badge-container">
+          <span class="hero-eyebrow">Médico Cirujano · CMP 111905</span>
+          <span class="status-indicator"><span class="status-dot"></span> Habilitada 2026</span>
         </div>
+        <h1 class="hero-title">Dra. Danna <em>Tupac</em></h1>
+        <p class="hero-specialty">Médico Cirujano · Auditora Médica (EPG UPC) · Soporte Vital Avanzado</p>
+        <p class="hero-description">
+          Médica con sólida formación hospitalaria en áreas críticas y quirúrgicas, egresada de la <strong>Universidad Peruana de Ciencias Aplicadas (UPC)</strong>. Especial interés y proyección hacia la <strong>Cirugía Oncológica</strong>, con diplomado de postgrado en Auditoría Médica y Salud Ocupacional. Rigor científico, empatía activa y alto desempeño bajo presión.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="https://wa.me/51939753987?text=Hola%20Dra.%20Danna,%20le%20contacto%20desde%20su%20portafolio%20profesional" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/></svg>
+            Contactar por WhatsApp
+          </a>
+          <a href="assets/CV_Dra_Danna_Tupac.pdf" download="CV_Dra_Danna_Tupac.pdf" class="btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Descargar CV Oficial
+          </a>
+          <a href="#sobre-mi" class="btn-ghost">Conoce más ↓</a>
+        </div>
+
         <div class="hero-stats">
-          <div class="stat"><span class="stat-num">+3</span><span class="stat-label">Años de exp. clínica</span></div>
+          <div class="stat"><span class="stat-num">+3</span><span class="stat-label">Años de Exp. Clínica</span></div>
           <div class="stat-divider"></div>
-          <div class="stat"><span class="stat-num">111905</span><span class="stat-label">Colegiatura (CMP)</span></div>
+          <div class="stat"><span class="stat-num" data-static="true">111905</span><span class="stat-label">Colegiatura (CMP)</span></div>
           <div class="stat-divider"></div>
-          <div class="stat"><span class="stat-num">UPC</span><span class="stat-label">Universidad de Origen</span></div>
+          <div class="stat"><span class="stat-num" data-static="true">UPC</span><span class="stat-label">Alma Máter Médica</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num" data-static="true">EPG</span><span class="stat-label">Postgrado Auditoría</span></div>
         </div>
       </div>
+
       <div class="hero-photo">
         <div class="photo-frame">
-          <!-- ✏️ REEMPLAZAR src con foto real: <img src="foto-danna.jpg" alt="Dra. Tupac"> -->
-          <div class="photo-placeholder">
-            <svg viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="60" cy="45" r="28" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.4)" stroke-width="1.5"/>
-              <path d="M10 130 C10 100 30 90 60 90 C90 90 110 100 110 130" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.4)" stroke-width="1.5"/>
-            </svg>
-            <p>Foto profesional</p>
-          </div>
-          <div class="photo-badge">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#f59e0b"/></svg>
-            Médico Cirujano
-          </div>
+          <img src="assets/dra-danna-hero.jpg" alt="Dra. Danna Marjorie Tupac Rojas" class="hero-img" />
+          <a href="https://aplicaciones.cmp.org.pe/autenticidad-de-constancia/datos_constancia.php?codigo=20261030bd4c17dc9fcc" target="_blank" rel="noopener noreferrer" class="photo-badge" title="Verificar Habilidad en el Colegio Médico del Perú">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#f59e0b"/></svg>
+            <span>CMP 111905 · Habilitada 2026 ↗</span>
+          </a>
         </div>
       </div>
     </div>
+
     <div class="scroll-indicator">
       <div class="scroll-line"></div>
       <span>Scroll</span>
@@ -78,44 +142,61 @@
   <section id="sobre-mi" class="section sobre-mi-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Mi historia</span>
+        <span class="section-tag">Perfil Profesional</span>
         <h2 class="section-title">Sobre <em>mí</em></h2>
       </div>
       <div class="sobre-mi-grid">
         <div class="sobre-mi-text">
           <p class="lead-text">
-            Soy la Dra. Danna Marjorie Tupac Rojas, médica con vocación por la atención clínica y marcado interés por el desarrollo profesional en Cirugía Oncológica.
+            Soy la Dra. Danna Marjorie Tupac Rojas, médica cirujana con vocación de servicio, criterio clínico basado en evidencia y marcado interés por el desarrollo profesional en <strong>Cirugía Oncológica</strong>.
           </p>
           <p>
-            Egresada de la Universidad Peruana de Ciencias Aplicadas (UPC). A lo largo de mi trayectoria he trabajado en instituciones de alto nivel como el Hospital de Emergencias de Villa el Salvador (HEVES), el Hospital Grau, y el Hospital Casimiro Ulloa, desarrollando un enfoque integral centrado en el paciente.
+            Graduada de la <strong>Universidad Peruana de Ciencias Aplicadas (UPC)</strong>, he consolidado mi experiencia clínica en hospitales de referencia nacional como el <strong>Hospital de Emergencias de Villa El Salvador (HEVES III-1)</strong>, el <strong>Hospital de Emergencias José Casimiro Ulloa</strong> (referente en trauma) y el <strong>Hospital de Emergencia Grau</strong> (EsSalud).
           </p>
           <p>
-            Busco integrarme a equipos de alto nivel donde pueda aportar mi disciplina y responsabilidad, y continuar perfeccionando mis habilidades clínicas y quirúrgicas.
+            Cuento con un <strong>Diplomado de Postgrado en Auditoría Médica Basada en la Evidencia (EPG UPC)</strong> con 582 horas lectivas y 36 créditos académicos, abarcando auditoría clínica, laboral y salud ocupacional. Además, estoy acreditada con la <strong>Tríada de Emergencias y Soporte Vital: ATLS, ACLS y BLS</strong>.
           </p>
+          
           <div class="valores-grid">
             <div class="valor-item">
-              <div class="valor-icon">◉</div>
-              <div><strong>Disciplina y Responsabilidad</strong><p>Capacidad probada de trabajo bajo presión en áreas de emergencia y hospitalización.</p></div>
+              <div class="valor-icon">❖</div>
+              <div>
+                <strong>Disciplina Quirúrgica y Respuesta Crítica</strong>
+                <p>Experiencia probada en manejo de emergencias, shock trauma, asistencia quirúrgica y evolución postoperatoria.</p>
+              </div>
             </div>
             <div class="valor-item">
-              <div class="valor-icon">◉</div>
-              <div><strong>Empatía</strong><p>Trato humano y cercano, fundamentado en mis valores y voluntariados médicos.</p></div>
+              <div class="valor-icon">❖</div>
+              <div>
+                <strong>Vocación Humana y Voluntariado Oncológico</strong>
+                <p>Compromiso activo con el paciente vulnerable; voluntaria en albergue de apoyo al <strong>INEN ("Casita Fuente de Vida")</strong> y campañas comunitarias de prevención de salud.</p>
+              </div>
             </div>
             <div class="valor-item">
-              <div class="valor-icon">◉</div>
-              <div><strong>Actualización Constante</strong><p>Formación continua basada en evidencia, respaldada por certificaciones internacionales.</p></div>
+              <div class="valor-icon">❖</div>
+              <div>
+                <strong>Auditoría Médica y Calidad Asistencial</strong>
+                <p>Especialista de postgrado en revisión de calidad documental, pertinencia médica, historias clínicas y salud ocupacional.</p>
+              </div>
             </div>
           </div>
         </div>
+
         <div class="sobre-mi-visual">
+          <div class="about-photo-wrapper">
+            <img src="assets/dra-danna-about.jpg" alt="Dra. Danna Tupac en consulta" class="about-img" />
+          </div>
           <div class="quote-card">
             <div class="quote-mark">"</div>
             <p>La medicina de excelencia requiere tanto de rigor científico y disciplina, como de un profundo compromiso humano hacia el paciente.</p>
-            <cite>— Dra. Tupac</cite>
+            <cite>— Dra. Danna Tupac Rojas</cite>
           </div>
           <div class="credential-pills">
             <span class="pill">CMP: 111905</span>
-            <span class="pill">Egresada UPC</span>
+            <span class="pill">Habilidad Vigente 2026</span>
+            <span class="pill">Médico Cirujano UPC</span>
+            <span class="pill">Postgrado EPG UPC</span>
+            <span class="pill">ATLS · ACLS · BLS</span>
             <span class="pill">Lima, Perú</span>
           </div>
         </div>
@@ -123,102 +204,197 @@
     </div>
   </section>
 
-  <!-- ══════════════ EXPERIENCIA ══════════════ -->
+  <!-- ══════════════ COMPETENCIAS / EXPERIENCIA ══════════════ -->
   <section id="experiencia" class="section especialidades-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Lo que ofrezco</span>
-        <h2 class="section-title">Áreas de <em>experiencia</em></h2>
+        <span class="section-tag">Áreas de Dominio</span>
+        <h2 class="section-title">Competencias y <em>experiencia</em></h2>
       </div>
       <div class="especialidades-grid">
-        <div class="espec-card" data-aos>
-          <div class="espec-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-          </div>
-          <h3>Medicina Interna y General</h3>
-          <p>Evaluación clínica en hospitalización y emergencia. Elaboración de historias clínicas, evolución diaria y planes terapéuticos fundamentados.</p>
-          <span class="espec-tag">Práctica clínica</span>
-        </div>
+        
         <div class="espec-card featured" data-aos>
-          <div class="espec-badge">Destacado</div>
+          <div class="espec-badge">Enfoque Principal</div>
           <div class="espec-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.5 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6M9 15h6"/></svg>
           </div>
-          <h3>Asistencia Quirúrgica</h3>
-          <p>Experiencia en asistencia de procedimientos quirúrgicos, curaciones y seguimientos postoperatorios. Marcado interés por la Cirugía Oncológica.</p>
-          <span class="espec-tag">Área Quirúrgica</span>
+          <h3>Cirugía y Asistencia Quirúrgica</h3>
+          <p>Asistencia en procedimientos quirúrgicos, curaciones complejas, manejo de drenajes y seguimiento postoperatorio hospitalario. Proyección vocacional en Cirugía Oncológica.</p>
+          <span class="espec-tag">Quirófano & Hospitalización</span>
         </div>
+
+        <div class="espec-card" data-aos>
+          <div class="espec-badge gold-badge">Tríada Vital</div>
+          <div class="espec-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3>Emergencias y Soporte Vital</h3>
+          <p>Manejo de pacientes críticos con acreditación internacional completa: <strong>ATLS</strong> (Trauma), <strong>ACLS</strong> (Cardiovascular Avanzado) y <strong>BLS</strong> (Soporte Básico) por ICEDEP y UNMSM.</p>
+          <span class="espec-tag">ATLS · ACLS · BLS</span>
+        </div>
+
+        <div class="espec-card" data-aos>
+          <div class="espec-badge">Postgrado</div>
+          <div class="espec-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3>Auditoría Médica y Salud Ocupacional</h3>
+          <p>Especialista por la Escuela de Postgrado UPC (582 hrs, 36 créditos). Evaluación de historias clínicas, pertinencia médica, gestión de calidad sanitaria y salud laboral preventiva.</p>
+          <span class="espec-tag">EPG UPC Certificada</span>
+        </div>
+
         <div class="espec-card" data-aos>
           <div class="espec-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
-          <h3>Pediatría y Neonatología</h3>
-          <p>Evaluación clínica y atención en hospitalización y emergencia pediátrica. Tamizaje de patologías infantiles y control de salud.</p>
-          <span class="espec-tag">Salud Infantil</span>
+          <h3>Medicina General y Salud Comunitaria</h3>
+          <p>Atención integral en hospitalización, emergencia pediátrica y medicina interna. Liderazgo en campañas de salud, tamizaje de anemia y prevención de enfermedades no transmisibles.</p>
+          <span class="espec-tag">Atención Integral</span>
         </div>
-        <div class="espec-card" data-aos>
-          <div class="espec-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-          </div>
-          <h3>Salud Comunitaria y Prevención</h3>
-          <p>Liderazgo en campañas de salud, despistaje de diabetes, hipertensión, y prevención de la anemia. Trato directo en el primer nivel de atención.</p>
-          <span class="espec-tag">Atención Preventiva</span>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ══════════════ FORMACIÓN ══════════════ -->
+  <!-- ══════════════ FORMACIÓN Y TRAYECTORIA ══════════════ -->
   <section id="formacion" class="section formacion-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Trayectoria</span>
-        <h2 class="section-title">Formación y <em>experiencia</em></h2>
+        <span class="section-tag">Línea de Tiempo</span>
+        <h2 class="section-title">Formación y <em>trayectoria</em></h2>
       </div>
       <div class="timeline">
+        
         <div class="timeline-item" data-aos>
-          <div class="timeline-dot"></div>
+          <div class="timeline-dot gold"></div>
           <div class="timeline-content">
-            <span class="timeline-year">Oct 2025 – Presente</span>
+            <span class="timeline-year">Oct 2025 – Sep 2026</span>
             <h3>Médico SERUMS</h3>
-            <p class="timeline-place">CEMUNE (Centro de Municiones del Ejército Peruano)</p>
-            <p>Atención médica primaria y preventiva para personal de la institución.</p>
+            <p class="timeline-place">CEMUNE · Centro de Municiones del Ejército Peruano</p>
+            <p>Atención médica asistencial y preventiva para el personal militar y civil de la institución. Gestión de salud laboral, urgencias y programas preventivos.</p>
           </div>
         </div>
+
+        <div class="timeline-item" data-aos>
+          <div class="timeline-dot gold"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2025 – 2026 · Postgrado</span>
+            <h3>Diplomado Especializado en Auditoría Médica Basada en la Evidencia</h3>
+            <p class="timeline-place">Escuela de Postgrado UPC (EPG)</p>
+            <p>Aprobación con honores del programa de 582 horas lectivas y 36 créditos académicos. Especialización en Auditoría Clínica, Ámbito Laboral y Salud Ocupacional.</p>
+          </div>
+        </div>
+
         <div class="timeline-item" data-aos>
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <span class="timeline-year">Feb 2024 – Dic 2024</span>
-            <h3>Internado Médico</h3>
-            <p class="timeline-place">Hospital de Emergencias de Villa el Salvador (HEVES) III-1</p>
-            <p>Rotaciones en Cirugía, Pediatría, Medicina Interna, y Ginecología y Obstetricia. Elaboración de historias clínicas, asistencia en partos y cirugías.</p>
+            <h3>Internado Médico Hospitalario</h3>
+            <p class="timeline-place">Hospital de Emergencias de Villa El Salvador (HEVES) III-1</p>
+            <p>Rotaciones hospitalarias de alta demanda en <strong>Cirugía General</strong> (asistencia quirúrgica y postoperatorio), <strong>Pediatría y Neonatología</strong>, <strong>Medicina Interna</strong> y <strong>Ginecología y Obstetricia</strong>.</p>
           </div>
         </div>
+
         <div class="timeline-item" data-aos>
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <span class="timeline-year">Ago 2022 – Nov 2023</span>
-            <h3>Externados Médicos</h3>
-            <p class="timeline-place">Diversos Hospitales (Minsa y Essalud)</p>
-            <p>Hospital de Emergencia Grau, Hospital Casimiro Ulloa, Hospital María Auxiliadora, entre otros. Experiencia transversal en emergencias, psiquiatría y cirugía.</p>
+            <h3>Externados Clínicos y Quirúrgicos (EsSalud / MINSA)</h3>
+            <p class="timeline-place">Red Hospitalaria de Lima</p>
+            <ul class="externados-list">
+              <li><strong>Hospital de Emergencias José Casimiro Ulloa:</strong> Externado en Emergencia y Trauma.</li>
+              <li><strong>Hospital de Emergencia Grau (EsSalud):</strong> Externado de Cirugía y Medicina Interna.</li>
+              <li><strong>Hospital Carlos Alcántara Butterfield (EsSalud):</strong> Externado de Pediatría.</li>
+              <li><strong>Hospital III Ramón Castilla (EsSalud):</strong> Externado de Ginecología.</li>
+              <li><strong>Hospital María Auxiliadora (MINSA):</strong> Externado de Psiquiatría.</li>
+              <li><strong>CMI Manuel Barreto (MINSA):</strong> Externado de Medicina Familiar y Salud Comunitaria.</li>
+            </ul>
           </div>
         </div>
+
+        <div class="timeline-item" data-aos>
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2017 – 2024</span>
+            <h3>Licenciatura en Medicina Humana · Título de Médico Cirujano</h3>
+            <p class="timeline-place">Universidad Peruana de Ciencias Aplicadas (UPC)</p>
+            <p>Colegiada en el Colegio Médico del Perú (CMP 111905). Título profesional expedido el 04 de marzo de 2025.</p>
+          </div>
+        </div>
+
         <div class="timeline-item" data-aos>
           <div class="timeline-dot gold"></div>
           <div class="timeline-content">
-            <span class="timeline-year">Certificaciones y Grados</span>
-            <h3>Licenciatura en Medicina y Certificaciones</h3>
-            <p class="timeline-place">UPC y Entidades Internacionales</p>
+            <span class="timeline-year">Acreditaciones y Software Científico</span>
+            <h3>Certificaciones Internacionales y Soporte Crítico</h3>
+            <p class="timeline-place">Certificaciones Vigentes</p>
             <div class="cert-chips">
-              <span class="cert-chip">Médico Cirujano (UPC)</span>
-              <span class="cert-chip">ATLS (Soporte Vital en Trauma)</span>
-              <span class="cert-chip">Auditoría Médica basada en Evidencia</span>
+              <span class="cert-chip primary-chip">ATLS · Advanced Trauma Life Support</span>
+              <span class="cert-chip primary-chip">ACLS · Soporte Cardiovascular Avanzado (UNMSM)</span>
+              <span class="cert-chip primary-chip">BLS · Soporte Vital Básico (UNMSM)</span>
+              <span class="cert-chip">Auditoría Médica Basada en Evidencia (UPC)</span>
+              <span class="cert-chip">Healthcare Innovation & Entrepreneurship (Coursera)</span>
               <span class="cert-chip">Global Disease Masterclass</span>
-              <span class="cert-chip">Healthcare Innovation</span>
+              <span class="cert-chip">Análisis Estadístico: STATA · EPIDAT</span>
+              <span class="cert-chip">Gestores Bibliográficos: Zotero · Mendeley</span>
             </div>
           </div>
         </div>
+
       </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ REFERENCIAS PROFESIONALES ══════════════ -->
+  <section id="referencias" class="section referencias-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Respaldo Profesional</span>
+        <h2 class="section-title">Referencias <em>médicas</em></h2>
+        <p class="section-subtitle">Especialistas y directores de servicio que respaldan mi desempeño ético y clínico</p>
+      </div>
+      
+      <div class="referencias-grid">
+        <div class="ref-card" data-aos>
+          <div class="ref-header">
+            <div class="ref-avatar">Dr</div>
+            <div>
+              <h3>Dr. Diego Chungui Bravo</h3>
+              <p class="ref-role">Médico Especialista en Cirugía General</p>
+            </div>
+          </div>
+          <p class="ref-hospital">Hospital de Emergencias de Villa El Salvador (HEVES III-1)</p>
+          <span class="ref-badge">Referencia Quirúrgica</span>
+        </div>
+
+        <div class="ref-card" data-aos>
+          <div class="ref-header">
+            <div class="ref-avatar">Dr</div>
+            <div>
+              <h3>Dr. Josmill Efraín Espinoza Posadas</h3>
+              <p class="ref-role">Médico Especialista en Cirugía General</p>
+            </div>
+          </div>
+          <p class="ref-hospital">Hospital de Emergencias de Villa El Salvador (HEVES III-1)</p>
+          <span class="ref-badge">Referencia Quirúrgica</span>
+        </div>
+
+        <div class="ref-card" data-aos>
+          <div class="ref-header">
+            <div class="ref-avatar">Dr</div>
+            <div>
+              <h3>Dr. Carlos Luis Honorio Arroyo Quispe</h3>
+              <p class="ref-role">Emergenciólogo · Supervisor de Rotación</p>
+            </div>
+          </div>
+          <p class="ref-hospital">Hospital de Emergencias José Casimiro Ulloa</p>
+          <span class="ref-badge">Referencia Shock Trauma</span>
+        </div>
+      </div>
+
+      <p class="ref-note">
+        * Por protocolo de privacidad profesional, los contactos telefónicos directos y cartas de recomendación están disponibles previa solicitud de comités evaluadores institucionales.
+      </p>
     </div>
   </section>
 
@@ -226,55 +402,65 @@
   <section id="contacto" class="section contacto-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Hablemos</span>
+        <span class="section-tag">Canales Oficiales</span>
         <h2 class="section-title">Contactar a la <em>doctora</em></h2>
       </div>
       <div class="contacto-grid">
         <div class="contacto-info">
-          <p class="contacto-intro">Estoy disponible para resolver tus dudas, consultas o para oportunidades de integración a equipos médicos de alto nivel.</p>
+          <p class="contacto-intro">
+            Disponible para oportunidades laborales en instituciones de salud, equipos quirúrgicos, consultorías de auditoría médica y atención clínica profesional.
+          </p>
           <div class="contact-items">
+            
             <div class="contact-item">
               <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               </div>
               <div>
-                <strong>Teléfono / WhatsApp</strong>
-                <a href="https://wa.me/51962558080" target="_blank">(+51) 962 558 080</a>
+                <strong>Teléfono / WhatsApp Directo</strong>
+                <a href="https://wa.me/51939753987" target="_blank" rel="noopener noreferrer">(+51) 939 753 987</a>
               </div>
             </div>
+
             <div class="contact-item">
               <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
               </div>
               <div>
-                <strong>Correo electrónico</strong>
+                <strong>Correo Electrónico</strong>
                 <a href="mailto:tupacdanna@gmail.com">tupacdanna@gmail.com</a>
               </div>
             </div>
+
             <div class="contact-item">
               <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
               </div>
               <div>
                 <strong>Ubicación</strong>
-                <span>Jiron Monte Algarrobo 110, Santiago de Surco (Lima - Perú)</span>
+                <span>Jirón Monte Algarrobo 110, Urb. Monterrico Sur, Santiago de Surco (Lima - Perú)</span>
               </div>
             </div>
+
             <div class="contact-item">
               <div class="contact-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
               </div>
               <div>
-                <strong>Horario de atención</strong>
-                <span>Previa coordinación</span>
+                <strong>Acreditación Colegio Médico del Perú</strong>
+                <a href="https://aplicaciones.cmp.org.pe/autenticidad-de-constancia/datos_constancia.php?codigo=20261030bd4c17dc9fcc" target="_blank" rel="noopener noreferrer" class="cmp-link">
+                  CMP 111905 · Constancia Verificable 2026 ↗
+                </a>
               </div>
             </div>
+
           </div>
         </div>
+
         <form class="contacto-form" id="contactForm" onsubmit="handleSubmit(event)">
           <div class="form-group">
-            <label for="nombre">Tu nombre</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required />
+            <label for="nombre">Tu nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej. Dr. Carlos Mendoza / Lic. María Paredes" required />
           </div>
           <div class="form-row">
             <div class="form-group">
@@ -282,29 +468,29 @@
               <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
             </div>
             <div class="form-group">
-              <label for="telefono">Teléfono</label>
+              <label for="telefono">Teléfono / WhatsApp</label>
               <input type="tel" id="telefono" name="telefono" placeholder="+51 900 000 000" />
             </div>
           </div>
           <div class="form-group">
             <label for="motivo">Motivo de contacto</label>
             <select id="motivo" name="motivo">
-              <option value="">Selecciona una opción</option>
-              <option value="consulta-medica">Consulta Médica</option>
-              <option value="oportunidad-laboral">Oportunidad Laboral / Equipo Médico</option>
-              <option value="otros">Otros informes</option>
+              <option value="Oportunidad Laboral / Equipo Médico">Oportunidad Laboral / Integración a Equipo Médico</option>
+              <option value="Servicios de Auditoría Médica">Servicios de Auditoría Médica / Salud Ocupacional</option>
+              <option value="Consulta Asistencial / Paciente">Consulta Médica Asistencial</option>
+              <option value="Otra Consulta Profesional">Otro motivo profesional</option>
             </select>
           </div>
           <div class="form-group">
             <label for="mensaje">Mensaje</label>
-            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describe brevemente tu requerimiento o propuesta..."></textarea>
           </div>
           <button type="submit" class="btn-primary btn-full" id="submitBtn">
-            <span id="btnText">Enviar mensaje</span>
-            <span id="btnLoader" style="display:none">Enviando...</span>
+            <span id="btnText">Enviar mensaje a WhatsApp</span>
+            <span id="btnLoader" style="display:none">Abriendo WhatsApp...</span>
           </button>
           <div id="formSuccess" class="form-success" style="display:none">
-            ✓ Mensaje enviado. Me pondré en contacto pronto.
+            ✓ Redirigiendo a WhatsApp con los datos del mensaje. ¡Gracias por contactar!
           </div>
         </form>
       </div>
@@ -315,14 +501,16 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <span class="nav-logo">Dra. <em>Tupac</em></span>
-        <p>Médico Cirujano · CMP 111905 · Lima, Perú</p>
+        <span class="nav-logo">Dra. <em>Danna Tupac</em></span>
+        <p>Médico Cirujano · CMP 111905 · Egresada UPC · Santiago de Surco, Lima - Perú</p>
       </div>
       <div class="footer-links">
+        <a href="#inicio">Inicio</a>
         <a href="#sobre-mi">Sobre mí</a>
-        <a href="#experiencia">Experiencia</a>
+        <a href="#experiencia">Competencias</a>
         <a href="#formacion">Formación</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#referencias">Referencias</a>
+        <a href="assets/CV_Dra_Danna_Tupac.pdf" download="CV_Dra_Danna_Tupac.pdf">Descargar CV (PDF)</a>
       </div>
       <p class="footer-copy">© 2026 Dra. Danna Marjorie Tupac Rojas. Todos los derechos reservados.</p>
     </div>

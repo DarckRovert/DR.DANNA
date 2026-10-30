@@ -1,27 +1,29 @@
 /* ═══════════════════════════════════════════════════════════
-   Dra. Danna — app.js · Interacciones y animaciones
+   Dra. Danna — app.js · Interacciones, animaciones y contacto
    ═══════════════════════════════════════════════════════════ */
 
 // ── Navbar scroll ────────────────────────────────────────────
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
 // ── Hamburger menu ───────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  hamburger.classList.toggle('active');
-});
-// Cerrar menú al hacer click en un link
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    hamburger.classList.remove('active');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active');
   });
-});
+  // Cerrar menú al hacer click en un link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('active');
+    });
+  });
+}
 
 // ── Intersection Observer (animaciones de entrada) ───────────
 const observer = new IntersectionObserver((entries) => {
@@ -50,19 +52,23 @@ window.addEventListener('scroll', () => {
   });
 }, { passive: true });
 
-// ── Partículas (canvas) ─────────────────────────────────────
+// ── Partículas (canvas HiDPI Retina) ─────────────────────────
 (function initParticles() {
   const canvas = document.getElementById('particleCanvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
-  let W, H, particles = [];
-  const COUNT = 55;
+  let W = 0, H = 0, particles = [];
+  const COUNT = 50;
   const EMERALD = '16,185,129';
 
   function resize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
+    const dpr = window.devicePixelRatio || 1;
+    W = canvas.offsetWidth;
+    H = canvas.offsetHeight;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
   resize();
   window.addEventListener('resize', resize, { passive: true });
@@ -70,12 +76,12 @@ window.addEventListener('scroll', () => {
   class Particle {
     constructor() { this.reset(); }
     reset() {
-      this.x   = Math.random() * W;
-      this.y   = Math.random() * H;
-      this.r   = Math.random() * 1.5 + 0.4;
+      this.x   = Math.random() * (W || 300);
+      this.y   = Math.random() * (H || 300);
+      this.r   = Math.random() * 1.5 + 0.5;
       this.vx  = (Math.random() - 0.5) * 0.25;
       this.vy  = (Math.random() - 0.5) * 0.25;
-      this.alpha = Math.random() * 0.4 + 0.1;
+      this.alpha = Math.random() * 0.4 + 0.12;
     }
     update() {
       this.x += this.vx;
@@ -120,7 +126,7 @@ window.addEventListener('scroll', () => {
   loop();
 })();
 
-// ── Formulario de contacto ───────────────────────────────────
+// ── Formulario de contacto con redirección directa a WhatsApp ──
 function handleSubmit(e) {
   e.preventDefault();
   const btn     = document.getElementById('submitBtn');
@@ -132,18 +138,31 @@ function handleSubmit(e) {
   btnText.style.display = 'none';
   btnLoader.style.display = 'inline';
 
-  // Simulación de envío (reemplazar con endpoint real o EmailJS)
+  const nombre   = document.getElementById('nombre')?.value || '';
+  const email    = document.getElementById('email')?.value || '';
+  const telefono = document.getElementById('telefono')?.value || '';
+  const motivo   = document.getElementById('motivo')?.value || 'Consulta profesional';
+  const mensaje  = document.getElementById('mensaje')?.value || '';
+
+  // Mensaje estructurado para WhatsApp
+  const textoWA = `Hola Dra. Danna Tupac,\n\nMi nombre es *${nombre}*.\nMotivo: ${motivo}\nMensaje: ${mensaje}\n\nContacto: ${email} ${telefono ? '| Tel: ' + telefono : ''}`;
+  const urlWA = `https://wa.me/51939753987?text=${encodeURIComponent(textoWA)}`;
+
   setTimeout(() => {
     btn.disabled = false;
     btnText.style.display = 'inline';
     btnLoader.style.display = 'none';
     success.style.display = 'block';
+    
+    // Abrir WhatsApp con el mensaje estructurado
+    window.open(urlWA, '_blank');
+    
     e.target.reset();
-    setTimeout(() => success.style.display = 'none', 6000);
-  }, 1800);
+    setTimeout(() => { success.style.display = 'none'; }, 8000);
+  }, 900);
 }
 
-// ── Contador animado (stats) ─────────────────────────────────
+// ── Contador animado resiliente (sin error NaN) ───────────────
 function animateCounter(el, target, suffix = '') {
   const duration = 1800;
   const step = target / (duration / 16);
@@ -160,9 +179,14 @@ const statsObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       const numEls = entry.target.querySelectorAll('.stat-num');
       numEls.forEach(el => {
+        // Ignorar nodos estáticos o sin números (ej. "UPC", "111905" si tiene data-static)
+        if (el.hasAttribute('data-static')) return;
         const raw = el.textContent.replace(/\D/g, '');
+        if (!raw) return; // Protección absoluta contra NaN
+        const target = parseInt(raw, 10);
+        if (isNaN(target)) return;
         const suffix = el.textContent.includes('+') ? '+' : '';
-        animateCounter(el, parseInt(raw), suffix);
+        animateCounter(el, target, suffix);
       });
       statsObserver.unobserve(entry.target);
     }
