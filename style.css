@@ -205,6 +205,16 @@ em { font-style: italic; color: var(--emerald); }
   border-radius: 2px;
   transition: var(--transition);
 }
+.hamburger.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 
 /* ══════════════════════════════════════════════════════════
    HERO
