@@ -162,14 +162,14 @@ function handleSubmit(e) {
   }, 900);
 }
 
-// ── Contador animado resiliente (sin error NaN) ───────────────
-function animateCounter(el, target, suffix = '') {
-  const duration = 1800;
+// ── Contador animado resiliente (sin error NaN y preservando prefijos) ──
+function animateCounter(el, target, prefix = '', suffix = '') {
+  const duration = 1200;
   const step = target / (duration / 16);
   let current = 0;
   const timer = setInterval(() => {
     current = Math.min(current + step, target);
-    el.textContent = Math.floor(current) + suffix;
+    el.textContent = prefix + Math.floor(current) + suffix;
     if (current >= target) clearInterval(timer);
   }, 16);
 }
@@ -181,12 +181,14 @@ const statsObserver = new IntersectionObserver((entries) => {
       numEls.forEach(el => {
         // Ignorar nodos estáticos o sin números (ej. "UPC", "111905" si tiene data-static)
         if (el.hasAttribute('data-static')) return;
-        const raw = el.textContent.replace(/\D/g, '');
+        const text = el.textContent.trim();
+        const raw = text.replace(/\D/g, '');
         if (!raw) return; // Protección absoluta contra NaN
         const target = parseInt(raw, 10);
         if (isNaN(target)) return;
-        const suffix = el.textContent.includes('+') ? '+' : '';
-        animateCounter(el, target, suffix);
+        const prefix = text.startsWith('+') ? '+' : '';
+        const suffix = (!prefix && text.endsWith('+')) ? '+' : '';
+        animateCounter(el, target, prefix, suffix);
       });
       statsObserver.unobserve(entry.target);
     }

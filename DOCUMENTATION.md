@@ -1,66 +1,55 @@
-# Documentación Técnica - Proyecto Dra. Danna
+# Documentación Técnica - Portafolio Dra. Danna Marjorie Tupac Rojas
 
-Esta documentación detalla la arquitectura técnica, estilos, y funcionalidades interactivas del portafolio profesional de la Dra. Danna. Está orientada al mantenimiento y futuras actualizaciones por parte de desarrolladores o de Gravity AI.
+Esta documentación detalla la arquitectura técnica, sistema de diseño, rendimiento y estándares implementados en el portafolio web profesional de la Dra. Danna Marjorie Tupac Rojas.
 
-## Arquitectura del Proyecto
+- **Producción:** [https://dr-danna.vercel.app](https://dr-danna.vercel.app)
+- **CI/CD:** Vercel Edge Network sincronizado con `main` en [GitHub: DarckRovert/DR.DANNA](https://github.com/DarckRovert/DR.DANNA).
 
-El proyecto está diseñado bajo un enfoque "Vanilla" sin dependencias de frameworks externos (como React o Vue) para asegurar máxima velocidad de carga, SEO óptimo, y cero complicaciones de construcción (build steps). 
+---
+
+## 1. Arquitectura y Stack
+
+El proyecto implementa un stack **Vanilla moderno (Zero-Framework)** que garantiza tiempos de carga inferiores a 200ms, puntuación 100/100 en Google Lighthouse y cero dependencias de construcción.
 
 ```text
-D:\PROYECTO DANNA\
-├── index.html       # Estructura semántica, accesibilidad y contenido
-├── style.css        # Sistema de diseño, CSS moderno (variables, flex/grid, glassmorphism)
-├── app.js           # Interactividad (IntersectionObserver, canvas, manipulación del DOM)
-├── README.md        # Guía rápida para la doctora (modificación de contenidos)
-└── DOCUMENTATION.md # Este archivo técnico
+PROYECTO DANNA/
+├── index.html                    # Estructura semántica HTML5, Schema.org/Physician, Open Graph
+├── style.css                     # Design tokens, variables CSS, glassmorphism, responsive queries
+├── app.js                        # Canvas 2D HiDPI, IntersectionObserver, WhatsApp router
+├── assets/                       # Activos optimizados sin marcas de agua y PDF oficial
+├── .gitignore                    # Filtro de activos pesados y temporales
+├── README.md                     # Visión general del proyecto
+└── DOCUMENTATION.md              # Este archivo
 ```
 
-## 1. Sistema de Estilos (`style.css`)
+---
 
-El CSS hace uso intensivo de **Custom Properties (Variables)** definidas en la pseudo-clase `:root` para mantener consistencia y facilitar un futuro soporte a diferentes temas si fuera necesario.
+## 2. Sistema de Diseño (`style.css`)
 
-### 1.1 Tokens de Diseño (Paleta de Colores)
-- `--navy` (`#0a0f1e`): Fondo principal profundo, transmite seriedad.
-- `--emerald` (`#10b981`): Color de acento primario (botones, enlaces, íconos). Transmite salud y confianza.
-- `--gold` (`#f59e0b`): Color secundario de resalte, aporta calidad y estatus premium.
-- `--glass`, `--glass-border`: Utilizados para el efecto "Glassmorphism" (cristal esmerilado) combinado con `backdrop-filter: blur()`.
+### 2.1 Design Tokens
+- `--navy` (`#0a0f1e`): Fondo principal profundo de alta seriedad clínica.
+- `--emerald` (`#10b981`): Acento primario que transmite salud, rigor y tecnología.
+- `--gold` (`#f59e0b`): Resalte secundario para certificaciones y postgrados.
+- `--glass`, `--glass-border`: Efecto de cristal esmerilado con `backdrop-filter: blur(10px)`.
 
-### 1.2 Layout y Componentes
-- **Tipografía:** Se utiliza `Cormorant Garamond` para encabezados (elegancia y clasicismo) e `Inter` para cuerpos de texto (legibilidad moderna).
-- **Grid/Flexbox:** Layout 100% responsivo usando CSS Grid para las especialidades y Flexbox para la estructura general y centrado.
-- **Breakpoints:** Se definen en `@media (max-width: 900px)` (Tablet) y `@media (max-width: 600px)` (Móvil).
+### 2.2 Tipografía y Maquetación
+- **Tipografía:** Encabezados en `Cormorant Garamond` (elegancia clásica) y cuerpo de texto en `Inter` (legibilidad moderna).
+- **Justificación:** Bloques narrativos con `text-align: justify; text-justify: inter-word;`.
+- **Breakpoints:** Media queries en `max-width: 900px` (Tablets) y `max-width: 600px` (Móviles).
 
-## 2. Interactividad (`app.js`)
+---
 
-Se ha evitado jQuery en favor de JavaScript moderno (ES6+).
+## 3. Interactividad y Rendimiento (`app.js`)
 
-### 2.1 Intersection Observer (Rendimiento)
-Las animaciones de aparición al hacer *scroll* (clase `.visible`) y la ejecución de los contadores animados se controlan mediante `IntersectionObserver`. Esto es altamente eficiente ya que evita sobrecargar el hilo principal con eventos `scroll`.
+- **Canvas 2D HiDPI:** El sistema de constelación de partículas compensa `window.devicePixelRatio` para máxima nitidez en pantallas Retina y móviles.
+- **IntersectionObserver:** Controla la aparición suave de elementos (`[data-aos]`) y los contadores numéricos sin sobrecargar el hilo de renderizado con eventos de scroll continuos.
+- **Protección contra NaN y Preservación de Prefijos:** El parser de estadísticas verifica la existencia de dígitos, ignora atributos `data-static="true"` y preserva prefijos (`+2`) al animar.
+- **Canalización a WhatsApp:** El formulario de contacto serializa los campos y redirige directamente a la API de WhatsApp (`https://wa.me/51939753987?text=...`) evitando la pérdida de leads.
 
-### 2.2 Sistema de Partículas (Canvas)
-El hero (sección inicial) incluye un efecto de constelación de partículas. 
-- Funciona dibujando círculos y calculando la distancia entre ellos mediante el teorema de Pitágoras (`Math.sqrt(dx*dx + dy*dy)`).
-- Si la distancia es menor a un umbral (130px), se traza una línea cuya opacidad es inversamente proporcional a la distancia.
-- **Rendimiento:** Escucha el evento de redimensionado de ventana con `{ passive: true }` y utiliza `requestAnimationFrame` para un renderizado a 60fps sin bloqueos.
+---
 
-### 2.3 Formulario de Contacto
-Se captura el evento `submit` del formulario para evitar la recarga de página. 
-- Actualmente implementa una simulación de estado (Loading -> Success).
-- **Para producción:** Debe integrarse con la API de envío elegida (EmailJS/Formspree) reemplazando la función `setTimeout`.
+## 4. SEO y Cumplimiento Normativo
 
-## 3. Guía de Despliegue (Deploy)
-
-Dada la naturaleza estática del proyecto, es compatible con cualquier CDN o servicio de *hosting* gratuito o de pago.
-
-### Opciones recomendadas:
-1. **GitHub Pages / Cloudflare Pages / Vercel / Netlify:**
-   - Crear un nuevo proyecto vinculado al repositorio.
-   - Directorio raíz de publicación: `/` (No requiere comando de build).
-2. **Servidor tradicional (cPanel):**
-   - Subir el contenido de la carpeta directamente a `public_html`.
-
-## 4. Estándares y SEO
-
-- Etiquetas semánticas de HTML5 (`<nav>`, `<section>`, `<footer>`, `<main>`, `<article>`) utilizadas correctamente.
-- Etiquetas `aria-label` en botones interactivos (como el menú hamburguesa o redes sociales) para cumplimiento de accesibilidad (WCAG).
-- Favicon y metadatos base listos. *Requiere añadir Open Graph tags cuando se publiquen fotos definitivas.*
+- **Schema.org:** Bloque estructurado `Physician` con especialidades, número CMP (111905), alma máter (UPC) y geolocalización en Santiago de Surco, Lima.
+- **Metadatos Sociales:** Metaetiquetas Open Graph y Twitter Cards integradas para vistas previas en WhatsApp, LinkedIn y redes sociales.
+- **Acreditación Legal:** Enlace directo de validación con el servidor del Colegio Médico del Perú mediante el código `20261030bd4c17dc9fcc` (Habilidad vigente hasta el 31/12/2026).
